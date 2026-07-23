@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a3c8660319d7bc344bada079f89c55c7
+guid: 72ddd1bc9b90ce3459ab57546e1cde3d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7417636800387487566
-    second: Sprite-Desligado_0
+      213: -4287143650750586629
+    second: Sprite-Desligado-Recovered_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-Desligado_0
+      name: Sprite-Desligado-Recovered_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 8
-        width: 17
-        height: 18
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b8e90061a24f0990800000000000000
-      internalID: -7417636800387487566
+      spriteID: bf0a0fb50910184c0800000000000000
+      internalID: -4287143650750586629
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 14d3300e523502e4f94432dc0e084dbe
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +146,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Sprite-Desligado_0: -7417636800387487566
+      Sprite-Desligado-Recovered_0: -4287143650750586629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

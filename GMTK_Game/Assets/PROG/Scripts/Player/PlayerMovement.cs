@@ -14,8 +14,11 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 groundCheckSize;
     public LayerMask groundLayer;
 
+    public LayerMask spikeLayer;
+
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
+    public float setDirection = 1f;
 
     public bool canJump = false;
     public bool destroyed = false;
@@ -42,10 +45,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveInput.x > 0)
         {
+            setDirection = 1;
             spriteRenderer.flipX = false;
         }
         if (moveInput.x < 0)
         {
+            setDirection = -1;
             spriteRenderer.flipX = true;
         }
     }
@@ -81,7 +86,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void DesligarCorpo()
     {
-        Instantiate(PlayerDesligado, transform.position, Quaternion.identity);
+        SpriteRenderer spriteRendererCorpo = Instantiate(PlayerDesligado, transform.position, Quaternion.identity).GetComponent<SpriteRenderer>();
+        if(setDirection == 1)
+        {
+            spriteRendererCorpo.flipX = false;
+        } if (setDirection == -1)
+        {  
+            spriteRendererCorpo.flipX = true; 
+        }
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(spikeLayer.Contains(collision.gameObject.layer))
+        {
+            DesligarCorpo();
+        }
     }
 }

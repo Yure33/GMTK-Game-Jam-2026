@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: dfe68260baba3f241b8a26a2ae31273d
+guid: a116b42692a75a34ca370ea8db28c42c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8713120321045492238
-    second: Sprite-0001-Sheet_0
+      213: -530157270425567349
+    second: "Cano Fuma\xE7a-Sheet_0"
   - first:
-      213: 7900860951653682938
-    second: Sprite-0001-Sheet_1
+      213: 371706378977846234
+    second: "Cano Fuma\xE7a-Sheet_1"
   - first:
-      213: 583417684835264956
-    second: Sprite-0001-Sheet_2
+      213: -2028554436374759921
+    second: "Cano Fuma\xE7a-Sheet_2"
   - first:
-      213: -7474615155744080074
-    second: Sprite-0001-Sheet_3
+      213: -3274397005385280131
+    second: "Cano Fuma\xE7a-Sheet_3"
+  - first:
+      213: 8805473513893073254
+    second: "Cano Fuma\xE7a-Sheet_4"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,89 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-0001-Sheet_0
+      name: "Cano Fuma\xE7a-Sheet_0"
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 32
-        height: 32
+        width: 28
+        height: 27
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e02772594c83be870800000000000000
-      internalID: 8713120321045492238
+      spriteID: b8f713d75c084a8f0800000000000000
+      internalID: -530157270425567349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0001-Sheet_1
+      name: "Cano Fuma\xE7a-Sheet_1"
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 0
-        width: 32
-        height: 32
+        width: 28
+        height: 36
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afe821bcc2f75ad60800000000000000
-      internalID: 7900860951653682938
+      spriteID: ad3a8b77bf0982500800000000000000
+      internalID: 371706378977846234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0001-Sheet_2
+      name: "Cano Fuma\xE7a-Sheet_2"
       rect:
         serializedVersion: 2
-        x: 64
+        x: 66
         y: 0
-        width: 32
-        height: 32
+        width: 28
+        height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb969441b47b81800800000000000000
-      internalID: 583417684835264956
+      spriteID: f06f654ec7029d3e0800000000000000
+      internalID: -2028554436374759921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0001-Sheet_3
+      name: "Cano Fuma\xE7a-Sheet_3"
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
-        height: 32
+        width: 30
+        height: 54
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63f7f193e15d44890800000000000000
-      internalID: -7474615155744080074
+      spriteID: d755868a5410f82d0800000000000000
+      internalID: -3274397005385280131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Cano Fuma\xE7a-Sheet_4"
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66115bae183533a70800000000000000
+      internalID: 8805473513893073254
       vertices: []
       indices: 
       edges: []
@@ -213,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ecfdd9178bcf728429314509fc8fb001
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -221,14 +246,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Sprite-0001-Sheet_0: 8713120321045492238
-      Sprite-0001-Sheet_1: 7900860951653682938
-      Sprite-0001-Sheet_2: 583417684835264956
-      Sprite-0001-Sheet_3: -7474615155744080074
+      "Cano Fuma\xE7a-Sheet_0": -530157270425567349
+      "Cano Fuma\xE7a-Sheet_1": 371706378977846234
+      "Cano Fuma\xE7a-Sheet_2": -2028554436374759921
+      "Cano Fuma\xE7a-Sheet_3": -3274397005385280131
+      "Cano Fuma\xE7a-Sheet_4": 8805473513893073254
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
