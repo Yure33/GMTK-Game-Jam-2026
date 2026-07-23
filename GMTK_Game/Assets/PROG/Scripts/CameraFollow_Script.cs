@@ -10,6 +10,11 @@ public class CameraFollow_Script : MonoBehaviour
 
     void FixedUpdate()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null)
+        { 
+            targetOBJ = player.transform; 
+        }
         if(targetOBJ != null)
         {
             Cameras.position = Vector3.Slerp(Cameras.position, targetOBJ.position, Suavidade);

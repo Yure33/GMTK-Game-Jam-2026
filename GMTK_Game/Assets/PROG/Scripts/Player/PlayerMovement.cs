@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     Vector2 moveInput;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     public LayerMask spikeLayer;
 
+    ControlFPS_Script fpsControlScript;
+
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     public float setDirection = 1f;
@@ -26,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        GameObject fpsControl = GameObject.FindGameObjectWithTag("FpsController");
+        fpsControlScript = fpsControl.GetComponent<ControlFPS_Script>();
     }
     private void Update()
     {
@@ -63,11 +67,38 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Desligar(InputAction.CallbackContext context)
+    public void TurnOff(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            DesligarCorpo();
+            TurnOffBody();
+        }
+    }
+
+    public void TakeFilm(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            fpsControlScript.ConstanteAtivo = !fpsControlScript.ConstanteAtivo;
+        }
+    }
+
+    public void ChangeFPS(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            if(fpsControlScript.targetFPS == 5f)
+            {
+                fpsControlScript.targetFPS = 15f;
+            }
+            else if (fpsControlScript.targetFPS == 15f)
+            {
+                fpsControlScript.targetFPS = 30f;
+            }
+            else if (fpsControlScript.targetFPS == 30f)
+            {
+                fpsControlScript.targetFPS = 5f;
+            }
         }
     }
 
@@ -84,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void DesligarCorpo()
+    private void TurnOffBody()
     {
         SpriteRenderer spriteRendererCorpo = Instantiate(PlayerDesligado, transform.position, Quaternion.identity).GetComponent<SpriteRenderer>();
         if(setDirection == 1)
@@ -101,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(spikeLayer.Contains(collision.gameObject.layer))
         {
-            DesligarCorpo();
+            TurnOffBody();
         }
     }
 }

@@ -5,8 +5,10 @@ public class ControlFPS_Script : MonoBehaviour
     public Camera BaseCam;
     public Camera MainCam;
 
-    [SerializeField] float targetFPS;
-    [SerializeField] bool ConstanteAtivo;
+    public PlayerMovement player;
+
+    public bool ConstanteAtivo;
+    public float targetFPS;
     [SerializeField] RemainingTape_Script Tape;
     [SerializeField] int StartTape;
 

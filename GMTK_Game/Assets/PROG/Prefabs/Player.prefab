@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3052213885886296415}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3052213885886296415}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Desligar
+        m_MethodName: TurnOff
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -364,6 +364,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 50f37e65-e88c-4fc6-b3e4-2ba9f0f96c3b
     m_ActionName: 'Player/Desligar[/Keyboard/r]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3052213885886296415}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: TakeFilm
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 67edddeb-1d52-4c2d-8cad-709204e665b6
+    m_ActionName: 'Player/Frame[/Keyboard/f]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3052213885886296415}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: ChangeFPS
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7e0394db-a294-4c38-b9a6-8cbbbd3644d8
+    m_ActionName: 'Player/ChangeFPS[/Keyboard/tab]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -381,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ed74c67fc5812449eda58c6ca66f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  rb: {fileID: 7318313341411337121}
   animator: {fileID: 6000076133358032226}
   spriteRenderer: {fileID: 8192570502643117249}
   PlayerDesligado: {fileID: 7483714015445749971, guid: 657a963fb8c32c44f8f21ed9220c0cd9, type: 3}
