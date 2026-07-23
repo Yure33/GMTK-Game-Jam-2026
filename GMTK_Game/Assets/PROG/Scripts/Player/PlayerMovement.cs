@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     public LayerMask spikeLayer;
+    public LayerMask fumacaLayer;
 
     ControlFPS_Script fpsControlScript;
 
@@ -138,6 +139,15 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(spikeLayer.Contains(collision.gameObject.layer))
+        {
+            TurnOffBody();
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (fumacaLayer.Contains(collision.gameObject.layer))
         {
             TurnOffBody();
         }

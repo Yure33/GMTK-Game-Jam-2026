@@ -425,6 +425,10 @@ MonoBehaviour:
   spikeLayer:
     serializedVersion: 2
     m_Bits: 128
+  fumacaLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  slider: {fileID: 0}
   moveSpeed: 5
   jumpForce: 6
   setDirection: 1
