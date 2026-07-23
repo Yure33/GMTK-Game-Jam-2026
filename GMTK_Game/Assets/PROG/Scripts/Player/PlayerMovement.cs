@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
+    public GameObject PlayerDesligado;
+
     public Transform groundCheckTransform;
     public Vector2 groundCheckSize;
     public LayerMask groundLayer;
@@ -16,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 5f;
 
     public bool canJump = false;
-
+    public bool destroyed = false;
 
     private void Awake()
     {
@@ -56,6 +58,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Desligar(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            DesligarCorpo();
+        }
+    }
+
     private void CheckIsGrounded()
     {
 
@@ -67,5 +77,11 @@ public class PlayerMovement : MonoBehaviour
         {
             canJump = false;
         }
+    }
+
+    private void DesligarCorpo()
+    {
+        Instantiate(PlayerDesligado, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
