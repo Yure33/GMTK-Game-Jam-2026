@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0d8066ad883b2b84a9432f13baa21f9d
+guid: f19796e2eeca87846aeafa8d7002b019
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 966304821566608947
-    second: EfeitoTape_0
+      213: -1941319252764556064
+    second: EfeitoTape-export_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EfeitoTape_0
+      name: EfeitoTape-export_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +128,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33699329d11096d00800000000000000
-      internalID: 966304821566608947
+      spriteID: 0e48757dc6c0f05e0800000000000000
+      internalID: -1941319252764556064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EfeitoTape_1
+      name: EfeitoTape-export_1
       rect:
         serializedVersion: 2
         x: 160
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f24f682db2dc5624c8d547504afc85d8
-      internalID: 2077633520
+      spriteID: abd97605b5630bc409fc2cf15b684f75
+      internalID: -2114087308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EfeitoTape_2
+      name: EfeitoTape-export_2
       rect:
         serializedVersion: 2
         x: 320
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7a896bd4cb7ce44bb950932bad26fc6
-      internalID: 568151462
+      spriteID: 6a66ced10fe4bdf41834f1ff6c47e9c6
+      internalID: -691696995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EfeitoTape_3
+      name: EfeitoTape-export_3
       rect:
         serializedVersion: 2
         x: 480
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b044dd4e30b06544a8a6b3fa956c9ae0
-      internalID: -740681145
+      spriteID: b0fe5a97dd3579a4295a22c4f1c85618
+      internalID: -1447347257
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9020f6d8fcac32b4da4c62252447463a
+    spriteID: 4a7cbbed43ea7f147aae65273b5134eb
     internalID: 0
     vertices: []
     indices: 
@@ -216,10 +216,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":160.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      EfeitoTape_0: 966304821566608947
-      EfeitoTape_1: 2077633520
-      EfeitoTape_2: 568151462
-      EfeitoTape_3: -740681145
+      EfeitoTape-export_0: -1941319252764556064
+      EfeitoTape-export_1: -2114087308
+      EfeitoTape-export_2: -691696995
+      EfeitoTape-export_3: -1447347257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
