@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     ControlFPS_Script fpsControlScript;
 
+    public Slider slider;
+
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     public float setDirection = 1f;
@@ -30,9 +33,12 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         GameObject fpsControl = GameObject.FindGameObjectWithTag("FpsController");
         fpsControlScript = fpsControl.GetComponent<ControlFPS_Script>();
+        GameObject fpsSlider = GameObject.FindGameObjectWithTag("FpsSlider"); 
+        slider = fpsSlider.GetComponent<Slider>();
     }
     private void Update()
     {
+        slider.value = (int)fpsControlScript.targetFPS / 15;
         CheckIsGrounded();
         animator.SetFloat("moveInput.x", moveInput.x);
         animator.SetFloat("moveInput.y", moveInput.y);
@@ -89,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(fpsControlScript.targetFPS == 5f)
             {
+
                 fpsControlScript.targetFPS = 15f;
             }
             else if (fpsControlScript.targetFPS == 15f)
