@@ -6,6 +6,8 @@ TagManager:
   tags:
   - FpsController
   - FpsSlider
+  - Porta
+  - Alavanca
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Ground
   - Spikes
   - "Fuma\xE7a"
-  - 
+  - Alavanca
   - 
   - 
   - 
