@@ -14,6 +14,7 @@ public class ControlFPS_Script : MonoBehaviour
     public float targetFPS;
     [SerializeField] RemainingTape_Script Tape;
     [SerializeField] int StartTape;
+    [SerializeField] ConfigsPersist config;
 
     float IntervaloUpt;
     float timer;
@@ -25,6 +26,7 @@ public class ControlFPS_Script : MonoBehaviour
     }
     void Start()
     {
+        ChangeFPS(30);
         BaseCam.enabled = false;
         BaseCam.Render();
     }
@@ -51,7 +53,7 @@ public class ControlFPS_Script : MonoBehaviour
     public void ChangeFPS(int FPS)
     {
         targetFPS = FPS;
-
+        config.FPS = FPS;
         velocimero.sprite = velocimeroArray[(int)(targetFPS / 15)];
     }
 }
