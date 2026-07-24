@@ -14,15 +14,20 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheckTransform;
     public Vector2 groundCheckSize;
     public LayerMask groundLayer;
+    public LayerMask balaLayer;
 
     public LayerMask spikeLayer;
     public LayerMask fumacaLayer;
+    public LayerMask alavancaLayer;
+    public SpriteRenderer alavancaSprite;
 
-    ControlFPS_Script fpsControlScript;
+    public SpawnPorta spawnPorta;
+    public ControlFPS_Script fpsControlScript;
 
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     public float setDirection = 1f;
+    public bool alavanca = false;
 
     public bool canJump = false;
     public bool destroyed = false;
@@ -32,7 +37,11 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         GameObject fpsControl = GameObject.FindGameObjectWithTag("FpsController");
         fpsControlScript = fpsControl.GetComponent<ControlFPS_Script>();
-        GameObject fpsSlider = GameObject.FindGameObjectWithTag("FpsSlider"); 
+        GameObject spawnPortaObject = GameObject.FindGameObjectWithTag("Porta");
+        spawnPorta = spawnPortaObject.GetComponent<SpawnPorta>();
+        GameObject alavancaObject = GameObject.FindGameObjectWithTag("Alavanca");
+        alavancaSprite = alavancaObject.GetComponent<SpriteRenderer>();
+
     }
     private void Update()
     {
@@ -105,6 +114,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if(context.performed && alavanca)
+        {
+            alavancaSprite.flipX = !alavancaSprite.flipX;
+            if(spawnPorta.porta.activeSelf) 
+            { 
+                spawnPorta.porta.SetActive(false); 
+            } else
+            {
+                spawnPorta.porta.SetActive(true);
+            }
+            Debug.Log("Interagiu");
+        }
+    }
+
     private void CheckIsGrounded()
     {
 
@@ -133,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(spikeLayer.Contains(collision.gameObject.layer))
+        if(spikeLayer.Contains(collision.gameObject.layer) || balaLayer.Contains(collision.gameObject.layer))
         {
             TurnOffBody();
         }
@@ -145,6 +170,22 @@ public class PlayerMovement : MonoBehaviour
         if (fumacaLayer.Contains(collision.gameObject.layer))
         {
             TurnOffBody();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (alavancaLayer.Contains(collision.gameObject.layer))
+        {
+            alavanca = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (alavancaLayer.Contains(collision.gameObject.layer))
+        {
+            alavanca = false;
         }
     }
 }
