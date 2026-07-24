@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2526614788125024341}
   - component: {fileID: 5742803204498249653}
   - component: {fileID: 6489740227211890949}
-  - component: {fileID: -4648445424075898948}
-  m_Layer: 10
+  - component: {fileID: 7200246248040226947}
+  m_Layer: 0
   m_Name: Bala
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5112328127431613752, guid: a230a9e87acfc7c47a53ef46de7b6be0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_Color: {r: 0.4721644, g: 0.4721644, b: 0.4721644, a: 0.47058824}
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.1, y: 0.08}
@@ -167,7 +167,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.31551552, y: 0.2526395}
   m_EdgeRadius: 0
---- !u!114 &-4648445424075898948
+--- !u!114 &7200246248040226947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,11 +176,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 86584271140727655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87f7dc42ae6e866428c76614f8c2d6a8, type: 3}
+  m_Script: {fileID: 11500000, guid: f7ee5450c6cd6c14c8ba9f83de875872, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::Bala
   shotSpeed: 3
   turret: {fileID: 0}
+  fpsControl: {fileID: 0}
+  objControl: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 2048

@@ -14,13 +14,16 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheckTransform;
     public Vector2 groundCheckSize;
     public LayerMask groundLayer;
+    public LayerMask corpoLayer;
     public LayerMask balaLayer;
 
     public LayerMask spikeLayer;
     public LayerMask fumacaLayer;
     public LayerMask alavancaLayer;
+    public LayerMask buttonLayer;
     public SpriteRenderer alavancaSprite;
 
+    public Botao button;
     public SpawnPorta spawnPorta;
     public ControlFPS_Script fpsControlScript;
 
@@ -41,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
         spawnPorta = spawnPortaObject.GetComponent<SpawnPorta>();
         GameObject alavancaObject = GameObject.FindGameObjectWithTag("Alavanca");
         alavancaSprite = alavancaObject.GetComponent<SpriteRenderer>();
+        GameObject buttonObject = GameObject.FindGameObjectWithTag("Butão");
+        button = buttonObject.GetComponent<Botao>();
 
     }
     private void Update()
@@ -132,9 +137,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckIsGrounded()
     {
-
+        Collider2D hitCorpo = Physics2D.OverlapBox(groundCheckTransform.position, groundCheckSize, 0, corpoLayer);
         Collider2D hit = Physics2D.OverlapBox(groundCheckTransform.position, groundCheckSize, 0, groundLayer);
-        if(hit != null)
+        if(hit != null || hitCorpo != null)
         {
             canJump = true;
         } else
@@ -162,7 +167,6 @@ public class PlayerMovement : MonoBehaviour
         {
             TurnOffBody();
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

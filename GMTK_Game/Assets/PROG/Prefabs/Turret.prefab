@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3410017688462181847}
   - component: {fileID: 4593618087455183063}
-  - component: {fileID: 4138934749647089981}
+  - component: {fileID: 6603289871548223640}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Turret
@@ -124,7 +124,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4138934749647089981
+--- !u!114 &6603289871548223640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,11 +133,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8827171852197053291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55e6506d0f63aca42887df666c77ff0d, type: 3}
+  m_Script: {fileID: 11500000, guid: aed0e4c45b304564ca0f33bcadd979cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Turret
   fireRate: 0
-  fireTime: 1
+  fireTime: 1.5
   setDirection: 0
   firePoint: {fileID: 3198715073824384769}
   bala: {fileID: 86584271140727655, guid: 5c9e2880866178940a5d1ad285e520b8, type: 3}

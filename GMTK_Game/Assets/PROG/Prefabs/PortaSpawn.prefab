@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 7255583458035467108}
   - component: {fileID: 6785792080019488502}
   - component: {fileID: 6733020900501662396}
-  - component: {fileID: 9136432316920770088}
+  - component: {fileID: 269455618197904732}
   m_Layer: 0
   m_Name: PortaSpawn
   m_TagString: Porta
@@ -417,7 +417,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &9136432316920770088
+--- !u!114 &269455618197904732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7792781225143169058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0b5be9c5603f18408ae73b83309f08d, type: 3}
+  m_Script: {fileID: 11500000, guid: 343232344cc6dba438352a3edd9f45f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPorta
   porta: {fileID: 5921810908167787542}

@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class PortaTimer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public float TimerPorta = 0f;
+    public float MaxTimerPorta = 5f;
+    public bool timerRodando;
 
-    // Update is called once per frame
+    public GameObject portaTimer;
+    public ControlFPS_Script fpsControl;
+
     void Update()
     {
-        
+        if(timerRodando && fpsControl.ConstanteAtivo)
+        {
+            TimerPorta += Time.deltaTime;
+            if(TimerPorta >= MaxTimerPorta)
+            {
+                portaTimer.SetActive(true);
+                timerRodando = false;
+                TimerPorta = 0f;
+            }
+        }
     }
+
 }

@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ObjetosDinamicos_Controlador : MonoBehaviour
 {
-    [SerializeField] int FPS_Exigido;
+    public int FPS_Exigido;
     [SerializeField] float WaitTime;
     [SerializeField] ConfigsPersist fpsGame;
-    [SerializeField] Color[] invisible_visible;
+    public Color[] invisible_visible;
     int savePastFps;
     bool piscaPisca;
 

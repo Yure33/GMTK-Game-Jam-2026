@@ -9,6 +9,8 @@ TagManager:
   - Porta
   - Alavanca
   - Turret
+  - "But\xE3o"
+  - ObjController
   layers:
   - Default
   - TransparentFX
@@ -22,8 +24,8 @@ TagManager:
   - Alavanca
   - Bala
   - Player
-  - 
-  - 
+  - "But\xE3o"
+  - Corpo
   - 
   - 
   - 

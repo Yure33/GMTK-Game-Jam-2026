@@ -1,16 +1,20 @@
 using Unity.VisualScripting;
+using UnityEditor.Analytics;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
     [SerializeField] float fireRate = 0f;
-    [SerializeField] float fireTime = 1.0f;
+    [SerializeField] float fireTime = 1.5f;
     public float setDirection;
     public Transform firePoint;
     public GameObject bala;
     public Rigidbody2D balaRb;
+    public LayerMask balaLayer;
     public SpriteRenderer balaSprite;
     public SpriteRenderer sprite;
+    public ControlFPS_Script fpsControl;
+    public ObjetosDinamicos_Controlador objControl;
 
     private void Start()
     {
@@ -18,6 +22,15 @@ public class Turret : MonoBehaviour
     }
     void Update()
     {
+        if (fpsControl.targetFPS > objControl.FPS_Exigido)
+        {
+            balaSprite.color = objControl.invisible_visible[0];
+            bala.layer = 0;
+        } else
+        {
+            balaSprite.color = objControl.invisible_visible[1];
+            bala.layer = 10 << 0;
+        }
         if (sprite.flipX)
         {
             balaSprite.flipX = true;
@@ -26,6 +39,10 @@ public class Turret : MonoBehaviour
         {
             balaSprite.flipX = false;
             setDirection = -1;
+        }
+        if(!fpsControl.ConstanteAtivo)
+        {
+            return;
         }
         fireRate += Time.deltaTime;
         if(fireRate > fireTime)
@@ -37,6 +54,6 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(bala, firePoint.position, firePoint.rotation);
+        Instantiate(bala, firePoint.position, firePoint.rotation, transform.parent);
     }
 }
