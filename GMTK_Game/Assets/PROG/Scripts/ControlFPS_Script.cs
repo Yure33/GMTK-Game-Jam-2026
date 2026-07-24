@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControlFPS_Script : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class ControlFPS_Script : MonoBehaviour
     public Camera MainCam;
 
     public PlayerMovement player;
+    public Image velocimero;
+    public Sprite[] velocimeroArray;
 
     public bool ConstanteAtivo;
     public float targetFPS;
@@ -48,5 +51,7 @@ public class ControlFPS_Script : MonoBehaviour
     public void ChangeFPS(int FPS)
     {
         targetFPS = FPS;
+
+        velocimero.sprite = velocimeroArray[(int)(targetFPS / 15)];
     }
 }
