@@ -20,8 +20,6 @@ public class PlayerMovement : MonoBehaviour
 
     ControlFPS_Script fpsControlScript;
 
-    public Slider slider;
-
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     public float setDirection = 1f;
@@ -35,11 +33,9 @@ public class PlayerMovement : MonoBehaviour
         GameObject fpsControl = GameObject.FindGameObjectWithTag("FpsController");
         fpsControlScript = fpsControl.GetComponent<ControlFPS_Script>();
         GameObject fpsSlider = GameObject.FindGameObjectWithTag("FpsSlider"); 
-        slider = fpsSlider.GetComponent<Slider>();
     }
     private void Update()
     {
-        slider.value = (int)fpsControlScript.targetFPS / 15;
         CheckIsGrounded();
         animator.SetFloat("moveInput.x", moveInput.x);
         animator.SetFloat("moveInput.y", moveInput.y);
@@ -96,16 +92,15 @@ public class PlayerMovement : MonoBehaviour
         {
             if(fpsControlScript.targetFPS == 5f)
             {
-
-                fpsControlScript.targetFPS = 15f;
+                fpsControlScript.ChangeFPS(15);
             }
             else if (fpsControlScript.targetFPS == 15f)
             {
-                fpsControlScript.targetFPS = 30f;
+                fpsControlScript.ChangeFPS(30);
             }
             else if (fpsControlScript.targetFPS == 30f)
             {
-                fpsControlScript.targetFPS = 5f;
+                fpsControlScript.ChangeFPS(5);
             }
         }
     }
