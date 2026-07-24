@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1901227831129620537}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GroundeCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 5371446637781998516}
   - component: {fileID: 2097369182435912705}
   - component: {fileID: 3052213885886296415}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -434,6 +434,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  balaLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   spikeLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -443,6 +446,7 @@ MonoBehaviour:
   alavancaLayer:
     serializedVersion: 2
     m_Bits: 512
+  alavancaSprite: {fileID: 0}
   spawnPorta: {fileID: 0}
   fpsControlScript: {fileID: 0}
   moveSpeed: 5

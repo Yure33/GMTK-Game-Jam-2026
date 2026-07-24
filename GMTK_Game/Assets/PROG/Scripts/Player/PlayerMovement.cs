@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheckTransform;
     public Vector2 groundCheckSize;
     public LayerMask groundLayer;
+    public LayerMask balaLayer;
 
     public LayerMask spikeLayer;
     public LayerMask fumacaLayer;
@@ -157,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(spikeLayer.Contains(collision.gameObject.layer))
+        if(spikeLayer.Contains(collision.gameObject.layer) || balaLayer.Contains(collision.gameObject.layer))
         {
             TurnOffBody();
         }
