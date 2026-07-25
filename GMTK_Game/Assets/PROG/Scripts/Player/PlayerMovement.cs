@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static event Action OnMainFunctionCalled;
     Vector2 moveInput;
     public Rigidbody2D rb;
     public Animator animator;
@@ -15,23 +16,19 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 groundCheckSize;
     public LayerMask groundLayer;
     public LayerMask corpoLayer;
-    public LayerMask caixaLyaer;
+    public LayerMask caixaLayer;
     public LayerMask balaLayer;
 
     public LayerMask spikeLayer;
     public LayerMask fumacaLayer;
-    public LayerMask alavancaLayer;
-    public LayerMask buttonLayer;
-    public SpriteRenderer alavancaSprite;
 
     public Botao button;
-    public SpawnPorta spawnPorta;
     public ControlFPS_Script fpsControlScript;
+    public Alavanca alavancaScript;
 
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     public float setDirection = 1f;
-    public bool alavanca = false;
 
     public bool canJump = false;
     public bool destroyed = false;
@@ -41,13 +38,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         GameObject fpsControl = GameObject.FindGameObjectWithTag("FpsController");
         fpsControlScript = fpsControl.GetComponent<ControlFPS_Script>();
-        GameObject spawnPortaObject = GameObject.FindGameObjectWithTag("Porta");
-        spawnPorta = spawnPortaObject.GetComponent<SpawnPorta>();
-        GameObject alavancaObject = GameObject.FindGameObjectWithTag("Alavanca");
-        alavancaSprite = alavancaObject.GetComponent<SpriteRenderer>();
-        GameObject buttonObject = GameObject.FindGameObjectWithTag("Butão");
-        button = buttonObject.GetComponent<Botao>();
-
     }
     private void Update()
     {
@@ -95,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeFilm(InputAction.CallbackContext context)
     {
-        if(context.performed && fpsControlScript.Tape.TapeSlider.value <= 0)
+        if(context.performed && fpsControlScript.Tape.TapeSlider.value > 0)
         {
             fpsControlScript.ConstanteAtivo = !fpsControlScript.ConstanteAtivo;
         }
@@ -122,17 +112,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
-        if(context.performed && alavanca)
+        if(context.performed)
         {
-            alavancaSprite.flipX = !alavancaSprite.flipX;
-            if(spawnPorta.porta.activeSelf) 
-            { 
-                spawnPorta.porta.SetActive(false); 
-            } else
-            {
-                spawnPorta.porta.SetActive(true);
-            }
-            Debug.Log("Interagiu");
+            OnMainFunctionCalled?.Invoke();
         }
     }
 
@@ -140,7 +122,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Collider2D hitCorpo = Physics2D.OverlapBox(groundCheckTransform.position, groundCheckSize, 0, corpoLayer);
         Collider2D hit = Physics2D.OverlapBox(groundCheckTransform.position, groundCheckSize, 0, groundLayer);
-        if(hit != null || hitCorpo != null)
+        Collider2D hitCaixa = Physics2D.OverlapBox(groundCheckTransform.position, groundCheckSize, 0, caixaLayer);
+        if (hit != null || hitCorpo != null || hitCaixa != null)
         {
             canJump = true;
         } else
@@ -175,22 +158,6 @@ public class PlayerMovement : MonoBehaviour
         if (fumacaLayer.Contains(collision.gameObject.layer))
         {
             TurnOffBody();
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (alavancaLayer.Contains(collision.gameObject.layer))
-        {
-            alavanca = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (alavancaLayer.Contains(collision.gameObject.layer))
-        {
-            alavanca = false;
         }
     }
 }

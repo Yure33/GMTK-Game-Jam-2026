@@ -1,5 +1,3 @@
-using UnityEditor.Tilemaps;
-using UnityEditor.Toolbars;
 using UnityEngine;
 
 public class TutorialScript : MonoBehaviour

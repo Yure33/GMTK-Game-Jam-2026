@@ -437,7 +437,7 @@ MonoBehaviour:
   corpoLayer:
     serializedVersion: 2
     m_Bits: 8192
-  caixaLyaer:
+  caixaLayer:
     serializedVersion: 2
     m_Bits: 16384
   balaLayer:
@@ -449,19 +449,11 @@ MonoBehaviour:
   fumacaLayer:
     serializedVersion: 2
     m_Bits: 256
-  alavancaLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  buttonLayer:
-    serializedVersion: 2
-    m_Bits: 4096
-  alavancaSprite: {fileID: 0}
   button: {fileID: 0}
-  spawnPorta: {fileID: 0}
   fpsControlScript: {fileID: 0}
+  alavancaScript: {fileID: 0}
   moveSpeed: 5
   jumpForce: 7
   setDirection: 1
-  alavanca: 0
   canJump: 0
   destroyed: 0

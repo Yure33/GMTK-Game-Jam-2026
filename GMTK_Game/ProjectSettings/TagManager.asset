@@ -11,6 +11,7 @@ TagManager:
   - Turret
   - "But\xE3o"
   - ObjController
+  - Corpo
   layers:
   - Default
   - TransparentFX
