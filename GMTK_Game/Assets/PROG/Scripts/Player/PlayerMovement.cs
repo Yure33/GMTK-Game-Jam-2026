@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 groundCheckSize;
     public LayerMask groundLayer;
     public LayerMask corpoLayer;
+    public LayerMask caixaLyaer;
     public LayerMask balaLayer;
 
     public LayerMask spikeLayer;
@@ -94,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeFilm(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if(context.performed && fpsControlScript.Tape.TapeSlider.value <= 0)
         {
             fpsControlScript.ConstanteAtivo = !fpsControlScript.ConstanteAtivo;
         }

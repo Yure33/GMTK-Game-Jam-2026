@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6372214970739545416}
-  - component: {fileID: 405413313247308877}
   - component: {fileID: 444737375938343633}
   - component: {fileID: 8649609719559630590}
   m_Layer: 6
@@ -34,23 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4798038729582929741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &405413313247308877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2823824847363975769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5adc7a51ff529f4591ec551e722f404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PortaTimer
-  TimerPorta: 0
-  MaxTimerPorta: 5
-  timerRodando: 0
-  portaTimer: {fileID: 0}
-  fpsControl: {fileID: 0}
 --- !u!212 &444737375938343633
 SpriteRenderer:
   serializedVersion: 2
@@ -311,10 +293,14 @@ MonoBehaviour:
   spriteButtonArray:
   - {fileID: -7620535639363840071, guid: 1680923b05071b6409e3d1d56633533d, type: 3}
   - {fileID: 648152305, guid: 1680923b05071b6409e3d1d56633533d, type: 3}
-  portaTimerScript: {fileID: 6983027837603008653}
+  portaTimer: {fileID: 0}
+  fpsControl: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 2048
+  caixaLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &6246659673384282135
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +311,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4798038729582929741}
   - component: {fileID: 9045175087455151654}
-  - component: {fileID: 6983027837603008653}
   - component: {fileID: 6802512007274673757}
   - component: {fileID: 4086147020119027507}
   m_Layer: 6
@@ -411,23 +396,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &6983027837603008653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6246659673384282135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5adc7a51ff529f4591ec551e722f404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PortaTimer
-  TimerPorta: 0
-  MaxTimerPorta: 5
-  timerRodando: 0
-  portaTimer: {fileID: 2823824847363975769}
-  fpsControl: {fileID: 0}
 --- !u!114 &6802512007274673757
 MonoBehaviour:
   m_ObjectHideFlags: 0

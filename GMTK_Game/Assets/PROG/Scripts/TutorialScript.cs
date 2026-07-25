@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TutorialScript : MonoBehaviour
 {
-    private float timer = 0f;
-    private float timerAppear = 3f;
+    public float timer = 0f;
+    private float timerAppear = 1.5f;
     private float timerDisappear = 10f;
     public bool awake;
-    private bool appear = true;
+    public bool appear = true;
 
     public Animator animator;
     void Start()

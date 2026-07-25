@@ -12,6 +12,7 @@ public class Bala : MonoBehaviour
 
     public LayerMask groundLayer;
     public LayerMask playerLayer;
+    public LayerMask caixaLayer;
     void Start()
     {
         col = GetComponent<Collider2D>();
@@ -45,7 +46,7 @@ public class Bala : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(groundLayer.Contains(collision.gameObject.layer) || (playerLayer.Contains(collision.gameObject.layer) && fpsControl.targetFPS == objControl.FPS_Exigido))
+        if(groundLayer.Contains(collision.gameObject.layer) || caixaLayer.Contains(collision.gameObject.layer) || (playerLayer.Contains(collision.gameObject.layer) && fpsControl.targetFPS == objControl.FPS_Exigido))
         {
             Destroy(gameObject);
         }
