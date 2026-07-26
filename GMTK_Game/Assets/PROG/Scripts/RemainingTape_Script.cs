@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class RemainingTape_Script : MonoBehaviour
 {
-    [SerializeField] Slider TapeSlider;
+    public Slider TapeSlider;
     [SerializeField] TextMeshProUGUI TapeLeft;
     [SerializeField] int ReduçãoTESTE;
 
@@ -17,8 +17,7 @@ public class RemainingTape_Script : MonoBehaviour
 
     public void UpdateSlider(int Less){
         TapeSlider.value -= Less;
-        if(TapeSlider.value <= 1){
-            Debug.Log("CONEXÃO ABORTADA!");
+        if(TapeSlider.value <= 0){
             TapeSlider.value = 0;
             return;
         }

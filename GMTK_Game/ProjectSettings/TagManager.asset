@@ -11,6 +11,9 @@ TagManager:
   - Turret
   - "But\xE3o"
   - ObjController
+  - Corpo
+  - AudioSource
+  - Bala
   layers:
   - Default
   - TransparentFX
@@ -26,7 +29,7 @@ TagManager:
   - Player
   - "But\xE3o"
   - Corpo
-  - 
+  - Caixa
   - 
   - 
   - 

@@ -12,8 +12,8 @@ public class ControlFPS_Script : MonoBehaviour
 
     public bool ConstanteAtivo;
     public float targetFPS;
-    [SerializeField] RemainingTape_Script Tape;
-    [SerializeField] int StartTape;
+    public RemainingTape_Script Tape;
+    public int StartTape;
     [SerializeField] ConfigsPersist config;
 
     float IntervaloUpt;
@@ -35,6 +35,11 @@ public class ControlFPS_Script : MonoBehaviour
     void Update()
     {
         if(!ConstanteAtivo){
+            return;
+        }
+        if(Tape.TapeSlider.value <= 0)
+        {
+            ConstanteAtivo = false;
             return;
         }
 

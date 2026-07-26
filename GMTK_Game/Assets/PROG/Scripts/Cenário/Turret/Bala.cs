@@ -7,11 +7,15 @@ public class Bala : MonoBehaviour
     Rigidbody2D rb;
     Collider2D col;
 
+    public float timer = 0f;
+    public float deathTimer = 15f;
+
     public ControlFPS_Script fpsControl;
     public ObjetosDinamicos_Controlador objControl;
 
     public LayerMask groundLayer;
     public LayerMask playerLayer;
+    public LayerMask caixaLayer;
     void Start()
     {
         col = GetComponent<Collider2D>();
@@ -22,11 +26,23 @@ public class Bala : MonoBehaviour
         fpsControl = fpsControlObject.GetComponent<ControlFPS_Script>();
         objControl = GetComponentInParent<ObjetosDinamicos_Controlador>();
 
-        rb.linearVelocity = new Vector2(shotSpeed * turret.setDirection, rb.linearVelocityY);
+        
+        if(turret.balaYDirection)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, shotSpeed * turret.Ydirection);
+        } else
+        {
+            rb.linearVelocity = new Vector2(shotSpeed * turret.setDirection, rb.linearVelocityY);
+        }
     }
 
     private void Update()
     {
+        timer += Time.deltaTime;
+        if(timer > deathTimer)
+        {
+            Destroy(gameObject);
+        }
         if (fpsControl.targetFPS == objControl.FPS_Exigido)
         {
             col.enabled = true;
@@ -37,7 +53,14 @@ public class Bala : MonoBehaviour
         }
         if (fpsControl.ConstanteAtivo)
         {
-            rb.linearVelocity = new Vector2(shotSpeed * turret.setDirection, rb.linearVelocityY);
+            if (turret.balaYDirection)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocityX, shotSpeed * turret.Ydirection);
+            }
+            else
+            {
+                rb.linearVelocity = new Vector2(shotSpeed * turret.setDirection, rb.linearVelocityY);
+            }
         } else
         {
             rb.linearVelocity = Vector2.zero;
@@ -45,7 +68,7 @@ public class Bala : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(groundLayer.Contains(collision.gameObject.layer) || (playerLayer.Contains(collision.gameObject.layer) && fpsControl.targetFPS == objControl.FPS_Exigido))
+        if(groundLayer.Contains(collision.gameObject.layer) || caixaLayer.Contains(collision.gameObject.layer) || (playerLayer.Contains(collision.gameObject.layer) && fpsControl.targetFPS == objControl.FPS_Exigido))
         {
             Destroy(gameObject);
         }

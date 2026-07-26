@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 3410017688462181847}
   - component: {fileID: 4593618087455183063}
   - component: {fileID: 6603289871548223640}
+  - component: {fileID: -4277199148427280146}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Turret
@@ -142,5 +143,58 @@ MonoBehaviour:
   firePoint: {fileID: 3198715073824384769}
   bala: {fileID: 86584271140727655, guid: 5c9e2880866178940a5d1ad285e520b8, type: 3}
   balaRb: {fileID: 5742803204498249653, guid: 5c9e2880866178940a5d1ad285e520b8, type: 3}
+  balaLayer:
+    serializedVersion: 2
+    m_Bits: 0
   balaSprite: {fileID: 2526614788125024341, guid: 5c9e2880866178940a5d1ad285e520b8, type: 3}
   sprite: {fileID: 4593618087455183063}
+  fpsControl: {fileID: 0}
+  objControl: {fileID: 0}
+  balaYDirection: 0
+  Ydirection: 0
+--- !u!61 &-4277199148427280146
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827171852197053291}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

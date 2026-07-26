@@ -10,7 +10,9 @@ public class ScriptActiveTutorial : MonoBehaviour
     {
         if(playerLayer.Contains(other.gameObject.layer))
         {
+            tutorial.appear = true;
             tutorial.awake = true;
+            tutorial.timer = 0f;
         }
     }
 }

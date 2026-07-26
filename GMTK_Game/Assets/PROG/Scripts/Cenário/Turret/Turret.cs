@@ -16,6 +16,9 @@ public class Turret : MonoBehaviour
     public ControlFPS_Script fpsControl;
     public ObjetosDinamicos_Controlador objControl;
 
+    public bool balaYDirection;
+    public float Ydirection;
+
     private void Start()
     {
 
@@ -24,12 +27,21 @@ public class Turret : MonoBehaviour
     {
         if (fpsControl.targetFPS > objControl.FPS_Exigido)
         {
-            balaSprite.color = objControl.invisible_visible[0];
-            bala.layer = 0;
-        } else
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Bala"));
+            {
+                sprite.color = objControl.invisible_visible[0];
+                balaSprite.color = objControl.invisible_visible[0];
+                //bala.layer = 0;
+            }
+        }
+        if(fpsControl.targetFPS == objControl.FPS_Exigido)
         {
-            balaSprite.color = objControl.invisible_visible[1];
-            bala.layer = 10 << 0;
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Bala")) ;
+            {
+                sprite.color = objControl.invisible_visible[1];
+                balaSprite.color = objControl.invisible_visible[1];
+                //bala.layer = 10 << 0;
+            }
         }
         if (sprite.flipX)
         {

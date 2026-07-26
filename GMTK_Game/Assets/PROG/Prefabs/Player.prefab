@@ -429,6 +429,9 @@ MonoBehaviour:
   animator: {fileID: 6000076133358032226}
   spriteRenderer: {fileID: 8192570502643117249}
   PlayerDesligado: {fileID: 7483714015445749971, guid: 657a963fb8c32c44f8f21ed9220c0cd9, type: 3}
+  audioSource: {fileID: 0}
+  JumpSound: {fileID: 8300000, guid: 3688a339022327c4c8243f1a86d48463, type: 3}
+  deathSound: {fileID: 8300000, guid: 343fb09c3c74fd74ea8071279499f5e5, type: 3}
   groundCheckTransform: {fileID: 1901227831129620537}
   groundCheckSize: {x: 0.63, y: 0.05}
   groundLayer:
@@ -437,6 +440,9 @@ MonoBehaviour:
   corpoLayer:
     serializedVersion: 2
     m_Bits: 8192
+  caixaLayer:
+    serializedVersion: 2
+    m_Bits: 16384
   balaLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -446,19 +452,11 @@ MonoBehaviour:
   fumacaLayer:
     serializedVersion: 2
     m_Bits: 256
-  alavancaLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  buttonLayer:
-    serializedVersion: 2
-    m_Bits: 4096
-  alavancaSprite: {fileID: 0}
   button: {fileID: 0}
-  spawnPorta: {fileID: 0}
   fpsControlScript: {fileID: 0}
+  alavancaScript: {fileID: 0}
   moveSpeed: 5
   jumpForce: 7
   setDirection: 1
-  alavanca: 0
   canJump: 0
   destroyed: 0
