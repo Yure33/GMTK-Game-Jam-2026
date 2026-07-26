@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class Botao : MonoBehaviour
 {
     public SpriteRenderer spriteButton;
@@ -27,12 +26,12 @@ public class Botao : MonoBehaviour
                 if (obj.activeSelf)
                 {
                     obj.SetActive(false);
-                    SoundFXManager.instance.openDoor.PlayOneShot(SoundFXManager.instance.openDoor.clip, 0.1f);
+                    SoundFXManager.instance.openDoor.PlayOneShot(SoundFXManager.instance.openDoor.clip, 1f);
                 }
                 else
                 {
                     obj.SetActive(true);
-                    SoundFXManager.instance.closeDoor.PlayOneShot(SoundFXManager.instance.closeDoor.clip, 0.1f);
+                    SoundFXManager.instance.closeDoor.PlayOneShot(SoundFXManager.instance.closeDoor.clip, 1f);
                 }
             }
             saiu = false;

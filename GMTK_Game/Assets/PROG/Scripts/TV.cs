@@ -14,8 +14,22 @@ public class TV : MonoBehaviour
 
     private void LoadNextScene()
     {
+        
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
+        LifesVariables.deathCount = 0;
+        DestroyAllCorpses();
         SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+
+    void DestroyAllCorpses()
+    {
+        // Loop through and delete each object from the scene
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Corpo"))
+        {
+            if (enemy != null)
+            {
+                Destroy(enemy);
+            }
+        }
     }
 }

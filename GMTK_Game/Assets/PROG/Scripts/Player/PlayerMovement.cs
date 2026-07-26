@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed && canJump)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            SoundFXManager.instance.jumpSound.PlayOneShot(SoundFXManager.instance.jumpSound.clip,0.12f);
+            SoundFXManager.instance.deathSound.PlayOneShot(SoundFXManager.instance.jumpSound.clip,1f);
 
         }
     }
@@ -144,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
         {  
             spriteRendererCorpo.flipX = true; 
         }
-        SoundFXManager.instance.deathSound.PlayOneShot(SoundFXManager.instance.deathSound.clip,0.12f);
+        SoundFXManager.instance.deathSound.PlayOneShot(SoundFXManager.instance.deathSound.clip,1f);
         Destroy(gameObject);
     }
 
