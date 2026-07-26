@@ -59,23 +59,7 @@ public class MusicLooper : MonoBehaviour
         // Initialize and begin the music loop
         GenerateNewQueue();
         StartCoroutine(MusicPlaylistRoutine());
-        StartCoroutine(SoundTrackLooper());
         ChangeMusicVolume();
-    }
-    private IEnumerator SoundTrackLooper()
-    {
-        musicVolume = volumeList[0];
-        while (true)
-        {
-            StartCoroutine(AudioHelper.FadeInVolume(music, fadeLength, musicVolume));
-            Debug.Log("Musica Fade In");
-            yield return new WaitForSeconds(Random.Range(50f, 70f));
-            StartCoroutine(AudioHelper.FadeOutVolume(music, fadeLength));
-            Debug.Log("Musica Fade Out");
-            yield return new WaitForSeconds(Random.Range(50f, 80f));
-            StartCoroutine(AudioHelper.FadeInVolume(music, fadeLength, musicVolume));
-            Debug.Log("Musica Fade In");
-        }
     }
 
     public void ChangeMusicVolume()
