@@ -27,10 +27,12 @@ public class Botao : MonoBehaviour
                 if (obj.activeSelf)
                 {
                     obj.SetActive(false);
+                    SoundFXManager.instance.openDoor.PlayOneShot(SoundFXManager.instance.openDoor.clip, 0.1f);
                 }
                 else
                 {
                     obj.SetActive(true);
+                    SoundFXManager.instance.closeDoor.PlayOneShot(SoundFXManager.instance.closeDoor.clip, 0.1f);
                 }
             }
             saiu = false;
@@ -46,9 +48,12 @@ public class Botao : MonoBehaviour
                 if(obj.activeSelf)
                 {
                     obj.SetActive(false);
-                } else
+                    SoundFXManager.instance.openDoor.PlayOneShot(SoundFXManager.instance.openDoor.clip, 0.1f);
+                }
+                else
                 {
                     obj.SetActive(true);
+                    SoundFXManager.instance.closeDoor.PlayOneShot(SoundFXManager.instance.closeDoor.clip, 0.1f);
                 }
             }
             spriteButton.sprite = spriteButtonArray[1];

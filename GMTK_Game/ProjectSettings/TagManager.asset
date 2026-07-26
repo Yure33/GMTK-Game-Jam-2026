@@ -12,6 +12,7 @@ TagManager:
   - "But\xE3o"
   - ObjController
   - Corpo
+  - AudioSource
   layers:
   - Default
   - TransparentFX
