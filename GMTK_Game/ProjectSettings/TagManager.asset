@@ -13,6 +13,7 @@ TagManager:
   - ObjController
   - Corpo
   - AudioSource
+  - Bala
   layers:
   - Default
   - TransparentFX

@@ -19,9 +19,9 @@ public class Botao : MonoBehaviour
     }
     private void Update()
     {
-        if(saiu && fpsControlScript.ConstanteAtivo)
+        if (saiu && fpsControlScript.ConstanteAtivo)
         {
-            foreach(GameObject obj in portaTimer)
+            foreach (GameObject obj in portaTimer)
             {
                 if (obj.activeSelf)
                 {
@@ -33,29 +33,29 @@ public class Botao : MonoBehaviour
                     obj.SetActive(true);
                     SoundFXManager.instance.closeDoor.PlayOneShot(SoundFXManager.instance.closeDoor.clip, 1f);
                 }
+                saiu = false;
             }
-            saiu = false;
             spriteButton.sprite = spriteButtonArray[0];
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(playerLayer.Contains(collision.gameObject.layer) || caixaLayer.Contains(collision.gameObject.layer) || corpoLayer.Contains(collision.gameObject.layer))
+        if((playerLayer.Contains(collision.gameObject.layer) || caixaLayer.Contains(collision.gameObject.layer) || corpoLayer.Contains(collision.gameObject.layer)) && fpsControlScript.ConstanteAtivo)
         {
-            foreach (GameObject obj in portaTimer)
-            {
-                if(obj.activeSelf)
+                foreach (GameObject obj in portaTimer)
                 {
-                    obj.SetActive(false);
-                    SoundFXManager.instance.openDoor.PlayOneShot(SoundFXManager.instance.openDoor.clip, 0.1f);
-                }
-                else
-                {
-                    obj.SetActive(true);
-                    SoundFXManager.instance.closeDoor.PlayOneShot(SoundFXManager.instance.closeDoor.clip, 0.1f);
-                }
+                    if(obj.activeSelf)
+                    {
+                        obj.SetActive(false);
+                        SoundFXManager.instance.openDoor.PlayOneShot(SoundFXManager.instance.openDoor.clip, 1f);
+                    }
+                    else
+                    {
+                        obj.SetActive(true);
+                        SoundFXManager.instance.closeDoor.PlayOneShot(SoundFXManager.instance.closeDoor.clip, 1f);
+                    }
+                spriteButton.sprite = spriteButtonArray[1];
             }
-            spriteButton.sprite = spriteButtonArray[1];
         }
     }
 

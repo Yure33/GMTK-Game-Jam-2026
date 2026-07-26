@@ -18,9 +18,9 @@ public class Alavanca : MonoBehaviour
     {
         if(alavanca)
         {
+                sprite.flipX = !sprite.flipX;
             foreach (GameObject obj in porta)
             {
-                sprite.flipX = !sprite.flipX;
                 if (obj.activeSelf)
                 {
                     obj.SetActive(false);

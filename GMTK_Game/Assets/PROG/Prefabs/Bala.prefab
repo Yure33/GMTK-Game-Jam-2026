@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7200246248040226947}
   m_Layer: 10
   m_Name: Bala
-  m_TagString: Untagged
+  m_TagString: Bala
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,11 +82,11 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5112328127431613752, guid: a230a9e87acfc7c47a53ef46de7b6be0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.1, y: 0.08}
@@ -181,6 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bala
   shotSpeed: 3
   turret: {fileID: 0}
+  timer: 0
+  deathTimer: 20
   fpsControl: {fileID: 0}
   objControl: {fileID: 0}
   groundLayer:
